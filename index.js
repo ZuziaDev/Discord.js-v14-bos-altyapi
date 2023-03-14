@@ -1,6 +1,6 @@
 const { Client, Collection, GatewayIntentBits, Partials } = require("discord.js");
 const client = new Client({intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMembers, GatewayIntentBits.GuildEmojisAndStickers, GatewayIntentBits.GuildIntegrations, GatewayIntentBits.GuildWebhooks, GatewayIntentBits.GuildInvites, GatewayIntentBits.GuildVoiceStates, GatewayIntentBits.GuildPresences, GatewayIntentBits.GuildMessages, GatewayIntentBits.GuildMessageReactions, GatewayIntentBits.GuildMessageTyping, GatewayIntentBits.DirectMessages, GatewayIntentBits.DirectMessageReactions, GatewayIntentBits.DirectMessageTyping, GatewayIntentBits.MessageContent], shards: "auto", partials: [Partials.Message, Partials.Channel, Partials.GuildMember, Partials.Reaction, Partials.GuildScheduledEvent, Partials.User, Partials.ThreadMember]});
-const { prefix, owner, token } = require("./config.js");
+const { prefix, owner, token } = require("./src/config.js");
 const { readdirSync } = require("fs")
 const moment = require("moment");
 const { REST } = require('@discordjs/rest');
@@ -10,7 +10,7 @@ client.commands = new Collection()
 
 const rest = new REST({ version: '10' }).setToken(token);
 
-const log = l => { console.log(`[${moment().format("DD-MM-YYYY HH:mm:ss")}] ${l}`) };
+const log = l => { console.log(`\x1b[32m[${moment().format("DD-MM-YYYY HH:mm:ss")}]\x1b[37m ${l}`) };
 
 //command-handler
 const commands = [];
