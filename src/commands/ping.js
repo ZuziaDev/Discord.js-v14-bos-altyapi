@@ -6,7 +6,7 @@ module.exports = {
     .setName("ping")
     .setDescription("Pong!"),
     run: async (client, interaction) => {
-      interaction.reply(`Pong 🏓`)
+      interaction.reply(`Pong 🏓 ${Math.round(client.ws.ping)}`)
       // komuta seçenekler eklemek istersen guide: https://discordjs.guide/interactions/slash-commands.html#options
     }
  };
