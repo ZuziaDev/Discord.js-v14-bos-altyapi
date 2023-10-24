@@ -3,6 +3,6 @@ module.exports = {
 	name: 'ready',
 	once: true,
 	execute(client) {
-    let activities = [ `ZuziaDev`, `${client.user.username}` ], i = 0;
+    let activities = [ `Rick Code`, `Arkh`, `Zuziâ RodzeN`, `${client.user.username}` ], i = 0;
     setInterval(() => client.user.setActivity({ name: `${activities[i++ % activities.length]}`, type: ActivityType.Listening }), 22000);
 }};
